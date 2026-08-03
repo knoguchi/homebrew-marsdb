@@ -1,18 +1,35 @@
-# Knoguchi Marsdb
+# homebrew-marsdb
 
-## How do I install these formulae?
+Homebrew tap for [MarsDB](https://github.com/knoguchi/marsdb), an embeddable
+property-graph database with an openCypher query subset.
 
-`brew install knoguchi/marsdb/<formula>`
+## Install
 
-Or `brew tap knoguchi/marsdb` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "knoguchi/marsdb"
-brew "<formula>"
 ```
+brew install knoguchi/marsdb/marsdb
+```
+
+Or tap first, then install:
+
+```
+brew tap knoguchi/marsdb
+brew install marsdb
+```
+
+This installs the `marsdb` CLI (builds from the published crates.io source
+via `cargo install`, so it needs the `rust` build dependency — Homebrew
+pulls that in automatically).
+
+```
+$ marsdb :memory:
+MarsDB graph database. Enter Cypher statements terminated by `;`. Ctrl-D to exit.
+marsdb> CREATE (a:Person {name: 'Alice'})-[:KNOWS]->(b:Person {name: 'Bob'});
+marsdb> MATCH (a:Person)-[:KNOWS]->(b:Person) RETURN a.name, b.name;
+```
+
+See the [main repo](https://github.com/knoguchi/marsdb) for the Rust library
+and Python bindings.
 
 ## Documentation
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+`brew help`, `man brew`, or [Homebrew's documentation](https://docs.brew.sh).

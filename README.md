@@ -16,6 +16,10 @@ brew tap knoguchi/marsdb
 brew install marsdb
 ```
 
+Recent Homebrew versions block loading a formula from a newly-tapped,
+not-yet-trusted tap the first time — if you hit `Refusing to load formula
+... from untrusted tap`, run `brew trust knoguchi/marsdb` once and retry.
+
 This installs the `marsdb` CLI (builds from the published crates.io source
 via `cargo install`, so it needs the `rust` build dependency — Homebrew
 pulls that in automatically).

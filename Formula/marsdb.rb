@@ -1,8 +1,8 @@
 class Marsdb < Formula
   desc "Embeddable property-graph database with an openCypher query subset"
   homepage "https://github.com/knoguchi/marsdb"
-  url "https://static.crates.io/crates/marsdb-cli/marsdb-cli-0.9.1.crate"
-  sha256 "c454d222972516b09416bf9f6decebcedaaacfef638b6df50234b19b37ae04a7"
+  url "https://static.crates.io/crates/marsdb-cli/marsdb-cli-0.10.0.crate"
+  sha256 "9af4234ebb45699a1f61f9c6a4f9ea09a90a0cb77f0d1cd9e0bc39614b1dba69"
   license any_of: ["Apache-2.0", "MIT"]
 
   depends_on "rust" => :build
